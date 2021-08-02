@@ -11,23 +11,23 @@ clock=pygame.time.Clock()
 #To set the game window
 screen= pygame.display.set_mode((800,600))
 
-#To change the logo, game name
+#To change the logo , game name
 
 pygame.display.set_caption("Space Invader")
-icon=pygame.image.load('spaceship.png')
+icon=pygame.image.load('./Icons/spaceship1.png')
 pygame.display.set_icon(icon)
 
 #now to add image on our game window
-playerimg=pygame.image.load('spaceship1.png')
+playerimg=pygame.image.load('./Icons/spaceship1.png')
 playerX=370
 playerY=480
 playerX_change=0
 
 # BACKGROUND IMAGE OF GAME
-backgroundimg = pygame.image.load('space.png')
+backgroundimg = pygame.image.load('./Icons/space.png')
 
 #BACKGROUND MUSIC 
-mixer.music.load('background.wav')
+mixer.music.load('./sounds/background.wav')
 mixer.music.play(-1)
 
 # enemy in game
@@ -38,14 +38,14 @@ enemyX_change=[]
 enemyY_change=[]
 no_of_enemy=6
 for i in range(no_of_enemy):
-    enemyimg.append(pygame.image.load('enemy.png'))
-    enemyX.append(random.randint(0,735))
+    enemyimg.append(pygame.image.load('./Icons/enemy.png'))
+    enemyX.append(random.randint(0,735))        
     enemyY.append(random.randint(50,150))
     enemyX_change.append(2)
     enemyY_change.append(40)
 
 # bullet in game
-bulletimg=pygame.image.load('bullet.png')
+bulletimg=pygame.image.load('./Icons/bullet.png')
 bulletX=0
 bulletY=480
 bulletY_change=40
@@ -74,7 +74,6 @@ def game_over():
 def player(x,y):
     screen.blit(playerimg,(x,y))
 
-
 def enemy(x,y,i):
     screen.blit(enemyimg[i],(x,y))
 
@@ -85,7 +84,7 @@ def fire_bullet(x,y):
 
 
 def isCollide(enemyX,enemyY,bulletX,bulletY):
-    distance=math.sqrt(math.pow((enemyX-bulletX),2)+ math.pow((enemyY-bulletY),2))
+    distance=math.sqrt(math.pow((enemyX-bulletX),2) + math.pow((enemyY-bulletY),2))
     if distance<27:
         return True
     else:
@@ -114,7 +113,7 @@ while running:
                 playerX_change= 6
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                     bullet_sound=mixer.Sound('laser.wav')
+                     bullet_sound=mixer.Sound('./sounds/laser.wav')
                      bullet_sound.play()
                      #so to get current x-coordinate of the spaceship
                      bulletX=playerX
@@ -148,17 +147,17 @@ while running:
         enemyX[i] += enemyX_change[i]
 
         if enemyX[i]<=0:
-            enemyX_change[i] = 9
+            enemyX_change[i] = 7
             enemyY[i] += enemyY_change[i]
         elif enemyX[i] >= 736:
-            enemyX_change[i]= -9          
+            enemyX_change[i]= -7         
             enemyY[i] += enemyY_change[i]
 
         
         #Collison part
         collison =isCollide(enemyX[i],enemyY[i],bulletX,bulletY)
         if collison:
-            collide_sound=mixer.Sound('explosion.wav')
+            collide_sound=mixer.Sound('./sounds/explosion.wav')
             collide_sound.play()
             bulletY=480
             bullet_state="ready"
