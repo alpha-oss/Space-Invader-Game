@@ -14,20 +14,20 @@ screen= pygame.display.set_mode((800,600))
 #To change the logo , game name
 
 pygame.display.set_caption("Space Invader")
-icon=pygame.image.load('./Icons/spaceship1.png')
+icon=pygame.image.load('./assets/images/spaceship1.png')
 pygame.display.set_icon(icon)
 
 #now to add image on our game window
-playerimg=pygame.image.load('./Icons/spaceship1.png')
+playerimg=pygame.image.load('./assets/images/spaceship1.png')
 playerX=370
 playerY=480
 playerX_change=0
 
 # BACKGROUND IMAGE OF GAME
-backgroundimg = pygame.image.load('./Icons/space.png')
+backgroundimg = pygame.image.load('./assets/images/space.png')
 
 #BACKGROUND MUSIC 
-mixer.music.load('./sounds/background.wav')
+mixer.music.load('./assets/sounds/background.wav')
 mixer.music.play(-1)
 
 # enemy in game
@@ -38,14 +38,14 @@ enemyX_change=[]
 enemyY_change=[]
 no_of_enemy=6
 for i in range(no_of_enemy):
-    enemyimg.append(pygame.image.load('./Icons/enemy.png'))
+    enemyimg.append(pygame.image.load('./assets/images/enemy.png'))
     enemyX.append(random.randint(0,735))        
     enemyY.append(random.randint(50,150))
     enemyX_change.append(2)
     enemyY_change.append(40)
 
 # bullet in game
-bulletimg=pygame.image.load('./Icons/bullet.png')
+bulletimg=pygame.image.load('./assets/images/bullet.png')
 bulletX=0
 bulletY=480
 bulletY_change=40
@@ -108,12 +108,12 @@ while running:
         if event.type == pygame.KEYDOWN:
             
             if event.key == pygame.K_LEFT:
-                playerX_change= -5
+                playerX_change= -6
             if event.key == pygame.K_RIGHT:
-                playerX_change= 5
+                playerX_change= 6
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
-                     bullet_sound=mixer.Sound('./sounds/laser.wav')
+                     bullet_sound=mixer.Sound('./assets/sounds/laser.wav')
                      bullet_sound.play()
                      #so to get current x-coordinate of the spaceship
                      bulletX=playerX
@@ -157,11 +157,11 @@ while running:
         #Collison part
         collison =isCollide(enemyX[i],enemyY[i],bulletX,bulletY)
         if collison:
-            collide_sound=mixer.Sound('./sounds/explosion.wav')
+            collide_sound=mixer.Sound('./assets/sounds/explosion.wav')
             collide_sound.play()
             bulletY=480
             bullet_state="ready"
-            score_value+=1
+            score_value+=5
             
             enemyX[i]=random.randint(0,735)
             enemyY[i]=random.randint(50,150)    
