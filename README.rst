@@ -1,4 +1,4 @@
-Space-Invader-Game🚀
+Space-Invader 🚀
 -------
 It is a python based game in which mainly pygame module have been used and many other modules are also there.
 Hope you like it.. and if you wish to modify , add new features to the game you are good to gooo!! 🤝
