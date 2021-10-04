@@ -1,9 +1,25 @@
-Space-Invader-Game
+Space-Invader-Game🚀
 -------
-It is a python  based game in which mainly pygame module have been used and many other modules are also there.
-Hope you like it..
+It is a python based game in which mainly pygame module have been used and many other modules are also there.
+Hope you like it.. and if you wish to modify , add new features to the game you are good to gooo!! 🤝
 
+🛡 ⚔️ 🛡 
+--------
+Mission to eliminate Aliens 👾
+Less go!!
 
+.. |Alias| image:: assets/images/img1.jpg
+  :width: 400
+
+.. |Alias2| image:: assets/images/img2.jpg
+  :width: 400
+
+.. |Alias3| image:: assets/images/img3.jpg
+  :width: 400
+
+The game-screen opens:
+
+|Alias|  |Alias2|  |Alias3|
 
 |AppVeyorBuild| |LaunchpadBuild| |PyPiVersion| |PyPiLicense| |Python2|
 |Python3| |GithubCommits| |LGTMAlerts| |LGTMGradePython| |LGTMGradeC|
