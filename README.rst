@@ -6,6 +6,14 @@ Hope you like it.. and if you wish to modify , add new features to the game you 
 🛡 ⚔️ 🛡 
 --------
 Mission to eliminate Aliens 👾
+
+Controls
+------
+1. Use arrow keys to move left and right.    
+2. Use spacebar to shoot down aliens.
+
+
+
 Less go!!
 
 .. |Alias| image:: assets/images/img1.jpg
